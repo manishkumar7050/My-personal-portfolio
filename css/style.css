@@ -1,0 +1,343 @@
+/* =========================================================
+   Manish Kumar - Portfolio styles
+   1. Colors and variables   2. Base   3. Navigation   4. Hero
+   5. Sections   6. Cards   7. Projects   8. Contact/Footer
+   9. Responsive   10. Reduced motion
+   ========================================================= */
+
+/* ---------- 1. COLORS AND VARIABLES ----------
+   Change a color here and it updates everywhere. */
+:root {
+  color-scheme: dark;
+  --bg: #101713;
+  --surface: #171f1a;
+  --surface-2: #1e2922;
+  --text: #eff4ec;
+  --muted: #a5b1a6;
+  --line: rgba(237, 247, 236, 0.14);
+  --accent: #b6df75;
+  --accent-ink: #182012;   /* text color used ON the accent color */
+  --warn: #e8c46a;         /* used for "to do" placeholders */
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+/* Light theme: JavaScript sets data-theme="light" on the <html> tag */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4f5ef;
+  --surface: #ffffff;
+  --surface-2: #edf1e9;
+  --text: #1b261e;
+  --muted: #56635a;
+  --line: rgba(24, 39, 27, 0.16);
+  --accent: #4a6b29;
+  --accent-ink: #ffffff;
+  --warn: #8a5a00;
+  --shadow: 0 24px 80px rgba(39, 55, 38, 0.1);
+}
+
+/* ---------- 2. BASE ---------- */
+* { box-sizing: border-box; }
+
+/* The hidden attribute must always win, even over display:flex */
+[hidden] { display: none !important; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;   /* stops the sticky header from covering headings */
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  line-height: 1.65;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, p, ul, dl, figure { margin: 0; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+button { font: inherit; }
+
+/* Visible keyboard focus for every interactive element */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+.muted { color: var(--muted); }
+
+.skip-link {
+  position: absolute; left: 16px; top: -60px; z-index: 20;
+  background: var(--accent); color: var(--accent-ink);
+  padding: 10px 16px; border-radius: 8px; font-weight: 700;
+}
+.skip-link:focus { top: 12px; }
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.16em;
+}
+
+/* ---------- 3. NAVIGATION ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar nav {
+  height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand { font-size: 22px; font-weight: 800; letter-spacing: -0.04em; }
+.brand span { color: var(--accent); }
+
+.navlinks { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 500; }
+.navlinks a { color: var(--muted); padding: 6px 0; border-bottom: 2px solid transparent; }
+.navlinks a:hover { color: var(--text); }
+/* "active" is added by JavaScript for the section you are currently reading */
+.navlinks a.active { color: var(--text); border-bottom-color: var(--accent); }
+
+.actions { display: flex; gap: 10px; }
+.icon-button {
+  width: 44px; height: 44px;              /* 44px = comfortable touch target */
+  display: grid; place-items: center;
+  border: 1px solid var(--line); border-radius: 50%;
+  background: var(--surface); color: var(--text); cursor: pointer;
+}
+.icon-button:hover { border-color: var(--accent); }
+.menu-toggle { display: none; }           /* shown only on small screens */
+
+/* ---------- BUTTONS ---------- */
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 22px; min-height: 44px;
+  border-radius: 99px; border: 1px solid var(--accent);
+  background: var(--accent); color: var(--accent-ink);
+  font-weight: 700; font-size: 14px;
+  transition: transform 0.2s;
+}
+.button:hover { transform: translateY(-2px); }
+.button.secondary { background: transparent; color: var(--text); border-color: var(--line); }
+.button.secondary:hover { border-color: var(--accent); }
+
+/* ---------- 4. HERO ---------- */
+.hero {
+  min-height: 620px;
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  align-items: center; gap: 64px;
+  padding: 64px 0 84px;
+}
+.hero h1 {
+  font-size: clamp(42px, 6.5vw, 72px);
+  line-height: 1.05; letter-spacing: -0.05em; font-weight: 800;
+  margin: 18px 0 14px;
+}
+.hero-role { color: var(--accent); font-weight: 600; font-size: 17px; margin-bottom: 18px; }
+.hero-copy { color: var(--muted); font-size: 17px; max-width: 540px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+.portrait {
+  justify-self: end; width: min(100%, 400px);
+  position: relative; overflow: hidden;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--line);
+  border-radius: 180px 180px 24px 24px;
+  background: var(--surface-2); box-shadow: var(--shadow);
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.portrait figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 44px 22px 20px;
+  background: linear-gradient(transparent, rgba(8, 15, 10, 0.82));
+  color: #fff;
+}
+.portrait strong { display: block; font-size: 16px; }
+.portrait span { font-size: 13px; color: #e0e8de; }
+
+/* ---------- 5. SECTIONS ---------- */
+.section { padding: 88px 0; border-top: 1px solid var(--line); }
+.section-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 24px; margin-bottom: 36px;
+}
+.section-head h2 { font-size: clamp(30px, 4vw, 42px); line-height: 1.12; letter-spacing: -0.04em; margin-top: 8px; }
+.section-head p { color: var(--muted); max-width: 400px; }
+
+.about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: start; }
+.about-copy p { color: var(--muted); font-size: 17px; max-width: 600px; }
+.about-copy p + p { margin-top: 16px; }
+
+/* ---------- 6. CARDS ---------- */
+.card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 18px; padding: 26px;
+}
+.card h3 { font-size: 19px; letter-spacing: -0.02em; margin-bottom: 6px; }
+.card-label { color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 10px; }
+
+.facts { margin-top: 18px; display: grid; gap: 12px; }
+.facts div { border-top: 1px solid var(--line); padding-top: 12px; }
+.facts dt { font-size: 12px; color: var(--muted); }
+.facts dd { margin: 2px 0 0; font-weight: 600; }
+
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.skill-list { list-style: none; padding: 0; margin-top: 14px; display: grid; gap: 10px; }
+.skill-list li {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 10px 0; border-top: 1px solid var(--line);
+}
+.skill-list span { font-weight: 600; }
+.tag {
+  font-style: normal; font-size: 12px; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 99px; padding: 3px 10px; text-align: right;
+}
+
+.plain-list { list-style: none; padding: 0; margin-top: 14px; display: grid; gap: 14px; }
+.plain-list li { border-top: 1px solid var(--line); padding-top: 12px; }
+.plain-list strong { display: block; }
+.plain-list span { color: var(--muted); font-size: 14px; }
+
+/* ---------- 7. PROJECTS ---------- */
+.projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.project {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 20px; padding: 28px;
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s;
+}
+.project:hover { border-color: var(--accent); }
+.project-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.category { color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.project h3 { font-size: 24px; letter-spacing: -0.03em; margin: 18px 0 2px; }
+.tagline { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+.project p { font-size: 15px; margin-bottom: 10px; }
+.project p strong { color: var(--text); }
+.mini-title { color: var(--muted); font-size: 13px; font-weight: 700; margin-top: 6px; }
+
+.feature-list { margin: 6px 0 12px; padding-left: 20px; color: var(--muted); font-size: 15px; }
+.feature-list li { margin-bottom: 3px; }
+
+/* Status labels: each one has text, so color is never the only signal */
+.status { font-size: 12px; font-weight: 700; padding: 4px 11px; border-radius: 99px; border: 1px solid var(--line); }
+.status-dev  { color: var(--warn); border-color: var(--warn); }
+.status-team { color: var(--accent); border-color: var(--accent); }
+.status-done { color: var(--text); }
+
+.project-links { margin-top: auto; padding-top: 14px; display: flex; gap: 18px; }
+.project-links a { color: var(--accent); font-weight: 700; font-size: 14px; border-bottom: 1px solid var(--accent); }
+
+/* Placeholders you still need to fill in. Remove the text and this style stops mattering. */
+.todo { color: var(--warn); border-left: 3px solid var(--warn); padding-left: 10px; }
+
+/* ---------- 8. CONTACT AND FOOTER ---------- */
+/* The contact panel uses fixed dark-green colors in both themes, so white text is always readable. */
+.contact-panel {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  background: radial-gradient(circle at 12% 0%, #4d7f2c 0%, #26441a 45%, #111c13 100%);
+  border: 1px solid rgba(182, 223, 117, 0.3);
+  border-radius: 28px; padding: clamp(24px, 5vw, 56px);
+  color: #f4f8f1;
+}
+.contact-label { color: #d4f09f; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; }
+.contact-panel h2 { font-size: clamp(32px, 4.5vw, 46px); line-height: 1.08; letter-spacing: -0.04em; margin: 12px 0 14px; }
+.contact-copy { color: #dbe7d6; max-width: 460px; margin-bottom: 26px; }
+
+.button.light { background: #f6f8f3; border-color: #f6f8f3; color: #14200f; gap: 10px; }
+.icon {
+  width: 18px; height: 18px; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+.social-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.social {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.28); border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1); color: #fff;
+  font-size: 14px; font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+}
+.social:hover { background: rgba(255, 255, 255, 0.2); border-color: #d4f09f; }
+.alt-email { margin-top: 16px; font-size: 14px; color: #dbe7d6; overflow-wrap: anywhere; }
+.alt-email a { color: #fff; border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+.contact-panel .todo { color: #f3d98a; border-color: #f3d98a; margin-top: 16px; }
+.contact-panel a:focus-visible, .contact-panel button:focus-visible { outline-color: #fff; }
+
+/* The form box */
+.contact-form {
+  background: #0c130e; color: #eff4ec;
+  border: 1px solid rgba(182, 223, 117, 0.28);
+  border-radius: 22px; padding: clamp(22px, 4vw, 34px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+.contact-form h3 { font-size: 22px; margin-bottom: 18px; }
+.contact-form label { display: block; font-size: 14px; font-weight: 600; color: #c4cfc4; margin: 14px 0 6px; }
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 13px 15px;
+  background: #121c15; color: #eff4ec;
+  border: 1px solid rgba(182, 223, 117, 0.25); border-radius: 12px;
+  font: inherit;
+}
+.contact-form textarea { resize: vertical; min-height: 120px; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: #8c998f; }
+.contact-form input:focus-visible, .contact-form textarea:focus-visible { outline: 3px solid #b6df75; outline-offset: 2px; }
+.contact-form [aria-invalid="true"] { border-color: #f08a7e; }
+
+.button.send { width: 100%; margin-top: 20px; gap: 10px; background: #b6df75; border-color: #b6df75; color: #182012; }
+.form-note { margin-top: 12px; font-size: 13px; color: #9fb0a1; }
+.form-status { margin-top: 10px; font-size: 14px; font-weight: 600; min-height: 1.4em; }
+.form-status.error { color: #f6a69b; }
+.form-status.success { color: #b6df75; }
+
+.footer {
+  padding: 28px 0; border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; gap: 10px;
+  color: var(--muted); font-size: 13px;
+}
+
+/* ---------- 9. RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 64px; }
+  .portrait { justify-self: center; width: min(86%, 360px); }
+  .about-grid, .contact-panel, .projects, .skills-grid { grid-template-columns: 1fr; }
+  .contact-panel { gap: 36px; }
+}
+
+@media (max-width: 760px) {
+  .wrap { width: calc(100% - 36px); }
+  .section { padding: 64px 0; }
+  .section-head { display: block; }
+  .section-head p { margin-top: 12px; }
+
+  .menu-toggle { display: grid; }
+  .navlinks {
+    display: none;                         /* closed by default on phones */
+    position: absolute; top: 72px; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 6px;
+    padding: 16px 24px 22px;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+  }
+  .navlinks.open { display: flex; }        /* JavaScript adds "open" */
+  .navlinks a { padding: 10px 0; width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .cta-row .button, .contact-info .button { width: 100%; }
+  .footer { flex-direction: column; }
+  .skill-list li { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .tag { text-align: left; }
+  .project { padding: 22px; }
+}
+
+/* ---------- 10. REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

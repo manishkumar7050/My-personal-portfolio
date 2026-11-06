@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manish Kumar | B.Tech CSE (AI) Student Portfolio</title>
+  <meta name="description" content="Portfolio of Manish Kumar, a B.Tech Computer Science student specializing in Artificial Intelligence. Java, C, web development, and AI/ML fundamentals.">
+  <meta name="theme-color" content="#101713">
+
+  <!-- Social sharing (shown when the link is shared on LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Manish Kumar | Student Developer Portfolio">
+  <meta property="og:description" content="B.Tech CSE (AI) student building skills in Java, web development, and AI/ML through practical projects.">
+  <!-- TODO: after deploying, add: <meta property="og:image" content="https://YOUR-SITE/images/my-pic.jpg"> -->
+
+  <!-- Simple text favicon, so no extra image file is needed -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101713'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='28' font-weight='bold' text-anchor='middle' fill='%23b6df75'%3EMK%3C/text%3E%3C/svg%3E">
+
+  <!-- One font family only, to keep the page light -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="topbar">
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Manish Kumar, back to top">MK<span>.</span></a>
+
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch to light theme">
+          <span id="themeIcon" aria-hidden="true">☼</span>
+        </button>
+        <button class="icon-button menu-toggle" id="menuToggle" type="button"
+                aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="wrap hero" id="home">
+      <div class="hero-text">
+        <p class="eyebrow">B.Tech CSE (AI) · 2nd Year</p>
+        <h1>Hi, I’m Manish Kumar.</h1>
+        <p class="hero-role">Computer Science Student <span aria-hidden="true">|</span> Java <span aria-hidden="true">|</span> Web Development <span aria-hidden="true">|</span> AI/ML</p>
+        <p class="hero-copy">
+          I’m a B.Tech CSE student specializing in Artificial Intelligence. I’m building my skills in Java,
+          programming fundamentals, web development, and AI/ML by working on practical projects, and I’m
+          looking for a technical internship where I can learn and contribute.
+        </p>
+
+        <div class="cta-row">
+          <a class="button" href="#projects">View Projects</a>
+          <!-- These three only appear if you fill in their links in js/script.js -->
+          <a class="button secondary" data-link="github" href="#" target="_blank" rel="noopener noreferrer" hidden>GitHub</a>
+          <a class="button secondary" data-link="resume" href="#" target="_blank" rel="noopener noreferrer" hidden>Download Resume</a>
+          <a class="button secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <figure class="portrait">
+        <img src="images/my-pic.jpg" width="800" height="1200"
+             alt="Portrait of Manish Kumar, smiling, wearing a beige shirt against a plain light background">
+        <figcaption>
+          <strong>Manish Kumar</strong>
+          <span>Engineering student · Rungta International Skills University</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">About me</p>
+            <h2 id="about-title">Learning by building.</h2>
+          </div>
+          <p>A student developer working on fundamentals and real projects.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I’m a second-year B.Tech student in Computer Science and Engineering with a specialization in
+              Artificial Intelligence. I enjoy solving programming problems and turning ideas into small,
+              working projects.
+            </p>
+            <p>
+              Right now I’m strengthening my Java, C, and data structures and algorithms basics, building websites
+              with HTML, CSS, and JavaScript, and learning the fundamentals of AI and machine learning.
+              I’m working on a couple of projects and I’m looking for software development, web development,
+              or AI/ML-related internships where I can improve my practical skills.
+            </p>
+          </div>
+
+          <aside class="card" aria-label="Education">
+            <p class="card-label">Education</p>
+            <h3>B.Tech in Computer Science and Engineering</h3>
+            <p class="muted">Specialization in Artificial Intelligence</p>
+            <dl class="facts">
+              <div><dt>University</dt><dd>Rungta International Skills University</dd></div>
+              <div><dt>Current level</dt><dd>Second year</dd></div>
+              <div><dt>Expected graduation</dt><dd>2029</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Skills</p>
+            <h2 id="skills-title">What I work with.</h2>
+          </div>
+          <p>Grouped by area, with an honest label for how far I have used each one.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card">
+            <h3>Programming</h3>
+            <ul class="skill-list">
+              <li><span>Java</span><em class="tag">Fundamentals</em></li>
+              <li><span>C</span><em class="tag">Fundamentals · used in a project</em></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Web Development</h3>
+            <ul class="skill-list">
+              <li><span>HTML</span><em class="tag">Used in a project</em></li>
+              <li><span>CSS</span><em class="tag">Used in a project</em></li>
+              <li><span>JavaScript</span><em class="tag">Used in a project</em></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Computer Science</h3>
+            <ul class="skill-list">
+              <li><span>Data Structures &amp; Algorithms</span><em class="tag">Fundamentals</em></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Artificial Intelligence</h3>
+            <ul class="skill-list">
+              <li><span>AI/ML concepts</span><em class="tag">Currently learning</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2 id="projects-title">Things I’m building.</h2>
+          </div>
+          <p>Each project shows its real status, so it is clear what is finished and what is still in progress.</p>
+        </div>
+
+        <div class="projects">
+
+          <!-- PROJECT 1: TrustLens AI -->
+          <article class="project">
+            <div class="project-top">
+              <span class="category">Explainable AI · NLP</span>
+              <span class="status status-dev">In Development</span>
+            </div>
+            <h3>TrustLens AI</h3>
+            <p class="tagline">See Beyond the Stars.</p>
+
+            <p><strong>Problem:</strong> Online reviews can look suspicious, but it is hard to judge them fairly, and many tools just give a verdict without showing why.</p>
+            <p><strong>Approach:</strong> Show observable evidence instead of declaring a review or business fake, explain the method behind each finding, and be clear about the limits of the data.</p>
+
+            <p class="mini-title">Planned checks (design goals, not all finished)</p>
+            <ul class="feature-list">
+              <li>Exact duplicate review detection</li>
+              <li>Similarity analysis for possibly related reviews</li>
+              <li>Generic wording patterns</li>
+              <li>Review timestamp analysis</li>
+              <li>CSV review import and findings export</li>
+            </ul>
+
+            <!-- VERIFY: keep only the technologies you have actually used so far. -->
+            <p><strong>Tech stack (MVP, in development):</strong> HTML, CSS, JavaScript, Python, Flask, Pandas, NumPy, Scikit-learn</p>
+            <p><strong>My contribution:</strong> Contributed to the project concept, UI/UX design, frontend development, feature planning, and presentation. Focused on making review analysis understandable through clear evidence and transparent explanations.</p>
+
+            <div class="project-links">
+              <a data-link="trustlensRepo" href="#" target="_blank" rel="noopener noreferrer" hidden>Source Code</a>
+              <a data-link="trustlensDemo" href="#" target="_blank" rel="noopener noreferrer" hidden>Live Demo</a>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: CivicPulse AI -->
+          <article class="project">
+            <div class="project-top">
+              <span class="category">AI · Civic Technology</span>
+              <span class="status status-team">Team Project · Hackathon</span>
+            </div>
+            <h3>CivicPulse AI</h3>
+            <p class="tagline">HackBIOS 2026 · SSTC, Bhilai · Team NexVanta</p>
+
+            <p><strong>Problem:</strong> Civic complaints often arrive as many separate reports, so related issues are scattered and it is hard to see which ones need attention first.</p>
+            <p><strong>Idea:</strong> AI-assisted complaint analysis and tracking that groups related reports, looks at the available evidence, and helps prioritize issues.</p>
+
+            <p><strong>What was built:</strong> A working prototype with a civic complaint dashboard, report submission, report management, issue grouping, and demo data. It organizes related complaints using similarity-based, rule-driven demo logic and shows issue summaries and priority information. Live AI processing through the Gemini API was optional and depended on API configuration; the demonstrated version ran in demo mode.</p>
+
+            <p class="mini-title">Tech stack</p>
+            <ul class="feature-list">
+              <li><strong>Frontend:</strong> React.js, HTML, CSS, JavaScript</li>
+              <li><strong>Backend:</strong> Node.js</li>
+              <li><strong>AI integration:</strong> Google Gemini API integration in the codebase; demo mode used simulated, rule-based analysis</li>
+              <li><strong>Data storage:</strong> Local JSON storage</li>
+            </ul>
+            <!-- VERIFY: change this if your real part was different. -->
+            <p><strong>My contribution:</strong> Contributed to idea development, project planning, frontend development, UI presentation, and preparing the project presentation for HackBIOS 2026 as part of Team NexVanta.</p>
+
+            <div class="project-links">
+              <a data-link="civicpulseRepo" href="#" target="_blank" rel="noopener noreferrer" hidden>Source Code</a>
+              <a data-link="civicpulseDemo" href="#" target="_blank" rel="noopener noreferrer" hidden>Live Demo</a>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Personal portfolio -->
+          <article class="project">
+            <div class="project-top">
+              <span class="category">Frontend · Web</span>
+              <span class="status status-done">Working Website</span>
+            </div>
+            <h3>Personal Portfolio</h3>
+            <p class="tagline">The website you are reading now.</p>
+
+            <p><strong>What it is:</strong> A single-page portfolio that introduces me, my skills, and my projects, written in plain HTML, CSS, and JavaScript with no frameworks.</p>
+
+            <p class="mini-title">What is implemented</p>
+            <ul class="feature-list">
+              <li>Responsive layout using CSS Grid, Flexbox, and media queries</li>
+              <li>Light and dark theme that remembers my choice</li>
+              <li>Mobile menu that works with the keyboard</li>
+              <li>Links and contact details kept in one settings object</li>
+            </ul>
+
+            <p><strong>Built with:</strong> HTML, CSS, JavaScript</p>
+
+            <div class="project-links">
+              <a data-link="portfolioRepo" href="#" target="_blank" rel="noopener noreferrer" hidden>Source Code</a>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: Calculator in C (from my earlier portfolio) -->
+          <article class="project">
+            <div class="project-top">
+              <span class="category">C Programming</span>
+              <span class="status status-done">Practice Project</span>
+            </div>
+            <h3>Calculator in C</h3>
+            <p class="tagline">A command-line calculator.</p>
+
+            <p><strong>What it does:</strong> Takes two numbers and an operator from the user and prints the result, using functions and switch-case logic.</p>
+            <p><strong>Built with:</strong> C</p>
+
+            <div class="project-links">
+              <a data-link="calculatorRepo" href="#" target="_blank" rel="noopener noreferrer" hidden>Source Code</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS & ACTIVITIES ============ -->
+    <section class="section" id="certifications" aria-labelledby="cert-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Learning record</p>
+            <h2 id="cert-title">Certifications &amp; activities.</h2>
+          </div>
+          <p>Online courses I have taken to build my fundamentals, and events I have taken part in.</p>
+        </div>
+
+        <!-- VERIFY: keep only the courses you can prove with a certificate or credential link. -->
+        <div class="about-grid">
+          <div class="card">
+            <h3>Certifications</h3>
+            <ul class="plain-list">
+              <li><strong>Calculus for Machine Learning and Data Science</strong><span>DeepLearning.AI</span></li>
+              <li><strong>Object-Oriented Programming in Java</strong><span>IBM</span></li>
+              <li><strong>Machine Learning with Python</strong><span>IBM</span></li>
+              <li><strong>Generative AI Agents and Apps</strong><span>Google</span></li>
+              <li><strong>Navigate Generative AI</strong><span>Google</span></li>
+              <li><strong>Generative AI: Foundational Concepts</strong><span>Google</span></li>
+              <li><strong>Beyond the Chatbot</strong><span>Google</span></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Activities</h3>
+            <ul class="plain-list">
+              <li><strong>HackBIOS 2026</strong><span>Hackathon at SSTC, Bhilai, with team NexVanta (project: CivicPulse AI)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-panel">
+
+          <div class="contact-info">
+            <p class="contact-label">Contact</p>
+            <h2 id="contact-title">Let’s connect.</h2>
+            <p class="contact-copy">I’m open to internship opportunities in software development, web development, and AI/ML. Send me a message or reach me through the links below.</p>
+
+            <a class="button light" data-link="email" href="#" hidden>
+              Let’s Connect
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+
+            <div class="social-row">
+              <a class="social" data-link="email" href="#" hidden>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+              </a>
+              <a class="social" data-link="github" href="#" target="_blank" rel="noopener noreferrer" hidden>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+              </a>
+              <a class="social" data-link="linkedin" href="#" target="_blank" rel="noopener noreferrer" hidden>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+
+            <p class="alt-email" id="altEmail" hidden>Alternate email: <a data-link="emailAlt" data-show-value href="#"></a></p>
+
+            <!-- Only shows while no contact link has been set in js/script.js -->
+            <p class="todo" id="contactEmpty" hidden>[Add your email, LinkedIn, and GitHub links in js/script.js so they appear here.]</p>
+          </div>
+
+          <!-- This form opens the visitor's own email app with the message filled in.
+               It does not use a server, so nothing is "sent" until they press Send in their email app. -->
+          <form class="contact-form" id="contactForm" novalidate>
+            <h3>Send a message</h3>
+
+            <label for="cfName">Name</label>
+            <input id="cfName" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+
+            <label for="cfEmail">Email</label>
+            <input id="cfEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+            <label for="cfMessage">Message</label>
+            <textarea id="cfMessage" name="message" rows="5" placeholder="Tell me about the opportunity or your idea…" required></textarea>
+
+            <button class="button send" type="submit">
+              Send Message
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <p class="form-note">This opens your email app with the message ready to send.</p>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer">
+    <span>© <span id="year">2026</span> Manish Kumar</span>
+    <span>B.Tech CSE (AI) student</span>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
